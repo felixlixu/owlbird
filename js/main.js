@@ -12,8 +12,9 @@ require.config({
        //the third js control
        select2:'../lib/select2/3.5.2/select2.min',
        zTree:'../lib/ztree/3.5.16/jquery.ztree.all-3.5.min',
-       'dataTables':'../lib/datatables/1.10.4/jquery.dataTables',
+       dataTables:'../lib/datatables/1.10.4/jquery.dataTables',
        fineUpload:'../lib/upload/5.0.8/all.fineuploader-5.0.8.min',
+       jqzoom:'../lib/jquery.jqzoom-core',
 
        //the directive
        angular_select2:'directive/angular_select2',
