@@ -38,6 +38,19 @@ define([],function(){
                 "minlength":10
             }],
             "control":"text"
+        }],
+        elecimgdata:[{
+            href:"www.sina.com.cn",
+            title:"TEST1",
+            src:"/angular/img/1.jpg"
+        },{
+            href:"www.ifeng.com",
+            title:"TEST2",
+            src:"/angular/img/2.jpg"
+        },{
+            href:"www.sohu.com",
+            title:"TEST3",
+            src:"/angular/img/3.jpg"
         }]
     }
 })

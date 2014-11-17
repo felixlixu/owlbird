@@ -8,7 +8,6 @@ define(['app'],function(app){
            compile:function(element,attrs){
                return function link(scope,elements,attrs,controller){
                    var model=attrs.ngModel;
-                   alert("123");
                    //增加form
                    var form="<form ng-form='form' name=\""+model+"form\"></form>"
                    elements.append(form);

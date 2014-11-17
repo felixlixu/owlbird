@@ -14,8 +14,12 @@ require.config({
        zTree:'../lib/ztree/3.5.16/jquery.ztree.all-3.5.min',
        dataTables:'../lib/datatables/1.10.4/jquery.dataTables',
        fineUpload:'../lib/upload/5.0.8/all.fineuploader-5.0.8.min',
+<<<<<<< HEAD
        jqzoom:'../lib/jqzoom/2.3/jquery.jqzoom-core',
        slidebox:'../lib/slidebox/1.2.0314/jquery.slideBox',
+=======
+       jqzoom:'../lib/jquery.jqzoom-core',
+>>>>>>> 34bb1716f5b6cca338c9a6ef7885ac4ba793e3d8
 
        //the directive
        angular_select2:'directive/angular_select2',
