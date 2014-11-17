@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html ng-controller="IndexController">
+<head lang="cn">
+    <meta charset="UTF-8">
+    <title>This is Test</title>
+    <link href="content/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="content/bootstrap.min.css" />
+    <link rel="stylesheet" href="content/font-awesome.min.css">
+    <link rel="stylesheet" href="content/select2.css" />
+    <link rel="stylesheet" href="content/zTreeStyle.css">
+    <link rel="stylesheet" href="content/jquery.dataTables.css">
+    <link rel="stylesheet" href="content/fineuploader-5.0.8.min.css" />
+    <link rel="stylesheet" href="content/bootstrap-reset.css" />
+    <link rel="stylesheet" href="content/style.css" />
+    <script src="./lib/require/require.js" data-main="./js/main.js"></script>
+</head>
+<body>
+    <section id="container" >
+        <!--header start-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="index.html" class="logo">Flat<span>lab</span></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-tasks"></i>
+                            <span class="badge bg-success">6</span>
+                        </a>
+                    </li>
+                    <!-- settings end -->
+                    <!-- inbox dropdown start-->
+                    <li id="header_inbox_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-envelope-alt"></i>
+                            <span class="badge bg-important">5</span>
+                        </a>
+                    </li>
+                    <!-- inbox dropdown end -->
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                            <i class="icon-bell-alt"></i>
+                            <span class="badge bg-warning">7</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        &nbsp;
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="images/avatar1_small.jpg">
+                            <span class="username">李旭</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="#"><i class=" icon-suitcase"></i>账户</a></li>
+                            <li><a href="#"><i class="icon-cog"></i>设置</a></li>
+                            <li><a href="#"><i class="icon-bell-alt"></i>消息</a></li>
+                            <li><a href="login.html"><i class="icon-key"></i>退出</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+            </div>
+        </header>
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" menu ng-Model="menu" class="nav-collapse ">
+            </div>
+        </aside>
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div ng-view></div>
+
+            </section>
+
+        </section>
+        <footer class="site-footer">
+            <div class="text-center">
+                2013 &copy; FlatLab by VectorLab.
+                <a href="#" class="go-top">
+                    <i class="icon-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>

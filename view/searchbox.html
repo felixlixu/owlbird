@@ -1,0 +1,23 @@
+<div class="col-lg-12">
+    <section class="panel">
+        <header class="panel-heading" >
+            测试双数控件查询框
+        </header>
+        <div class="panel-body">
+            <div search2controlforrow class="form-horizontal" ng-Model="searchBox"></div>
+        </div>
+    </section>
+</div>
+<div class="col-lg-12">
+    <section class="panel">
+        <header class="panel-heading" >
+            测试单数控件查询框
+        </header>
+        <div class="panel-body">
+            <div search2controlforrow class="form-horizontal" ng-Condition="searchSingleModel" ng-Model="searchSingleBox"></div>
+        </div>
+    </section>
+</div>
+<p class="preItem">您输入的年级是:<b>{{searchModel.title}}</b></p>
+<p class="preItem">您输入的年级是:<b>{{searchModel.name}}</b></p>
+<input type="text" id="title" ng-model="searchModel.title">
