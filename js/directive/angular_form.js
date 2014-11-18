@@ -6,16 +6,22 @@ define(['app'],function(app){
        var option={
            require:'ngModel',
            compile:function(element,attrs){
-               return function link(scope,elements,attrs,controller){
-                   var model=attrs.ngModel;
-                   //增加form
-                   var form="<form ng-form='form' name=\""+model+"form\"></form>"
-                   elements.append(form);
-                   //formelement
-                   var formelement=$("form[name="+model+"]");
+               var model=attrs.ngModel;
+               return function link(scope,element,attrs,controller){
                    var formelements=scope[model];
+                   var formctrl=scope[attrs.name];
                    $.each(formelements,function(key,value){
+                       //it is setting style,
+                       var row=util.genRow(key,element);
+                       //it is setting level
+                       //ngModelCtr.$name = scope.$eval(iAttrs.dyName);
+                       var ctrl=util.genOneCntlPreRow(value,row,model,attrs.name,scope);
+                       // register control
+                       formctrl.$addControl(ctrl);
 
+                       scope.$watch(model+".title",function(){
+                          alert(1233);
+                       });
                    });
                };
            }

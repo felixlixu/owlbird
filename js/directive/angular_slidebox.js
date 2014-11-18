@@ -12,11 +12,7 @@ define(['app','slidebox'],function(app){
                $(element).append("<ul class='items' id='"+model+"'></ul>");
                $.each(datasource,function(key,value){
                    var ll="<li><a href='"+value.href+"' title='"+value.title+"'><img src='"+value.src+"'></a></li>"
-                   //scope.$apply(
-                   //    function() {
-                           $("#" + model).append(ll);
-                   //    }
-                   //);
+                       $("#" + model).append(ll);
                });
                $(element).slideBox();
            }

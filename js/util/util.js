@@ -51,9 +51,30 @@ define([],function(){
             }
             $("#"+formgroupkey).append(submit);
         },
-        generate1formcontrolOfRow:function(key,value,scope,element,prefix){
-            
+
+        genRow:function(key,ctrl){
+            var id="row"+key;
+            ctrl.append("<div id=\""+id+"\" class='row'></div>");
+            return $("#"+id);
+        },
+
+        genOneCntlPreRow:function(key,ctrl,prefix,formname,scope){
+           var id=prefix+key.name,name=key.name,groupid="group"+prefix+key.name,groupdiv,elemctrl;
+           if(key.require[0].required) {
+               groupdiv = "<div ng-class=\"{'form-group':" + formname + "." + name + ".$valid,'form-group has-error':" + formname + "." + name + ".$invalid}\" id=" + groupid + "></div>";
+               elemctrl="<input type='text' ng-required='true' name='"+name+"' id='"+id+"'>"
+           }
+            ctrl.append(groupdiv);
+            var group=$("#"+groupid);
+            scope.$watch(group.attr['ngClass'],function(){
+
+            });
+            var lebel="<label style='text-align: right' class=\"col-lg-3 col-sm-3 control-label\">"+key.labelName+"</label>";
+            group.append(lebel);
+            group.append(elemctrl);
+            return $('#'+id);
         }
+
     };
     return util;
 });

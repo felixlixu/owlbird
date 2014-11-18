@@ -24,6 +24,7 @@ require.config({
        angular_upload:'directive/angular_upload',
        angular_menu:'directive/angular_menu',
        angularslidebox:'directive/angular_slidebox',
+       angularzoom:'directive/angular_zoom',
 
        //the service
        createcontrollerservice:'service/dynamiccreateService',
