@@ -2,30 +2,44 @@
  * Created by felix on 14-11-16.
  */
 define(['app'],function(app){
-   app.directive("realtimingform",function(){
+   app.directive("realtimingform",['$compile',function(compile){
        var option={
            require:'ngModel',
            compile:function(element,attrs){
                var model=attrs.ngModel;
-               return function link(scope,element,attrs,controller){
+               var formName="form"+model;
+               var form="<form action='#' novalidate name='"+formName+"'></form>";
+               return function link(scope,element,attrs){
+                   element.append(form);
+                   compile(form)(scope);
                    var formelements=scope[model];
-                   var formctrl=scope[attrs.name];
+                   var formctrl=scope[formName];
+                   var eleform=$("form[name="+formName+"]");
                    $.each(formelements,function(key,value){
-                       //it is setting style,
-                       var row=util.genRow(key,element);
-                       //it is setting level
-                       //ngModelCtr.$name = scope.$eval(iAttrs.dyName);
-                       var ctrl=util.genOneCntlPreRow(value,row,model,attrs.name,scope);
-                       // register control
-                       formctrl.$addControl(ctrl);
 
-                       scope.$watch(model+".title",function(){
-                          alert(1233);
-                       });
+                       var groupctrl=util.genGroupDiv(value,eleform,formName);
+                       //formctrl.$addControl(groupctrl);
+                       //compile(groupctrl)(scope);
+
+                       //add label
+                       util.genLabel(value,groupctrl,model);
+
+                       //add control
+                       var ctrl=util.genCtrl(value,groupctrl,model);
+                       // register control
+                       //ormctrl.$addControl(groupctrl);
+                       //formctrl.$addClass(ctrl);
+                       //compile(ctrl)(scope);
+
                    });
+
+                   compile(element.contents())(scope);
+
+
+                   console.log(scope.$$watchers);
                };
            }
        };
        return option;
-   });
+   }]);
 });

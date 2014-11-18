@@ -54,25 +54,34 @@ define([],function(){
 
         genRow:function(key,ctrl){
             var id="row"+key;
-            ctrl.append("<div id=\""+id+"\" class='row'></div>");
+            ctrl.append("<div id=\""+id+"\" ></div>");
             return $("#"+id);
         },
 
-        genOneCntlPreRow:function(key,ctrl,prefix,formname,scope){
-           var id=prefix+key.name,name=key.name,groupid="group"+prefix+key.name,groupdiv,elemctrl;
+        genGroupDiv:function(key,ctrl,model){
+           var groupid="group"+key.name,groupdiv;
            if(key.require[0].required) {
-               groupdiv = "<div ng-class=\"{'form-group':" + formname + "." + name + ".$valid,'form-group has-error':" + formname + "." + name + ".$invalid}\" id=" + groupid + "></div>";
-               elemctrl="<input type='text' ng-required='true' name='"+name+"' id='"+id+"'>"
+               groupdiv = "<div ng-class=\"{'form-group':" + model + "." + key.name + ".$valid,'form-group has-error':" + model + "." + key.name + ".$invalid}\" id=" + groupid + "></div>";
+           }
+           else{
+               groupdiv="<div ng-class='form-groupd' id=\""+groupid+"\"></div>"
            }
             ctrl.append(groupdiv);
-            var group=$("#"+groupid);
-            scope.$watch(group.attr['ngClass'],function(){
+            return $("#"+groupid);
+        },
 
-            });
-            var lebel="<label style='text-align: right' class=\"col-lg-3 col-sm-3 control-label\">"+key.labelName+"</label>";
-            group.append(lebel);
-            group.append(elemctrl);
-            return $('#'+id);
+        genLabel:function(key,ctrl,model){
+            var id="label"+key.name,label;
+            label="<lebel style='text-align: right'  >"+key.labelName+":</lable>"
+            ctrl.append(label);
+            return label;
+        },
+
+        genCtrl:function(key,ctrl,model){
+            var id="ctrl",elem;
+            elem="<input type='text' ng-required='true' class='form-control' name=\""+key.name+"\" ng-Model='test.title'>";
+            ctrl.append(elem);
+            return elem;
         }
 
     };

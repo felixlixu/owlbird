@@ -8,6 +8,9 @@ define(['angular_form','framedata'],function(){
         };
 
         $scope.evenformdata=frameData.evenform;
+        $scope.test={
+            title:""
+        }
     }] ;
     return formcontroller;
 });

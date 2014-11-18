@@ -37,6 +37,7 @@
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" ng-Model="data.name" name="name" ng-required="true" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                         <p ng-show="test.name.$invalid&&test.name.$error.email" class="help-block">Email格式错误,正确格式:felix@sina.com .</p>
+
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword">Password</label>
@@ -56,9 +57,9 @@
                 自定义表单-用户输入后直接验证
             </header>
             <div class="panel-body">
-                <form realtimingform ng-Model="evenformdata"  name="formMeta">
+                <div realtimingform ng-Model="evenformdata">
 
-                </form>
+                </div>
             </div>
         </section>
     </div>

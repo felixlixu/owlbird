@@ -4,7 +4,7 @@
 require.config({
    paths:{
        // base js
-       angular:"../lib/angular/1.2.7/angular.min",
+       angular:"../lib/angular/1.2.7/angular",
        angular_route:"../lib/angular/1.2.7/angular-route.min",
        bootstrap:"../lib/bootstrap/3.3.0/bootstrap.min",
        jquery:'../lib/jquery/2.1.1/jquery-2.1.1.min',
