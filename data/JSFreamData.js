@@ -32,12 +32,35 @@ define([],function(){
         evenform:[{
             "name":"title",
             "labelName":"标题",
+            "control":"text",
             "require":[{
                 "required":true,
-                "maxlength":50,
+                "maxlength":20,
                 "minlength":10
-            }],
-            "control":"text"
+            }]
+        },{
+            "name":"email",
+            "labelName":"邮箱",
+            "control":"email",
+            "require":[{
+                "required":true,
+                "patternNote":"请输入正确的邮箱格式,如：P0017359@pactera.com"
+            }]
+        },{
+            "name":"Customeremail",
+            "labelName":"客户方邮箱",
+            "control":"email",
+            "require":[{
+                "patternNote":"请输入正确的邮箱格式,如：P0017359@pactera.com"
+            }]
+        },{
+            "name":"state",
+            "labelName":"状态",
+            "control":"text",
+            "require":[{
+                "patternNote":"状态只能输入数字.",
+                'regularpattern':"^\\d{n}$"
+            }]
         }],
         elecimgdata:[{
             href:"www.sina.com.cn",

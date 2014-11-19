@@ -27,7 +27,7 @@ require.config({
        angularzoom:'directive/angular_zoom',
 
        //the service
-       createcontrollerservice:'service/dynamiccreateService',
+       metroformservice:'service/formservice/metro/formservice',
 
        // the adventrue controller
        angular_searchbox:'directive/angular_searchbox',

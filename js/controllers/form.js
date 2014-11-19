@@ -7,10 +7,7 @@ define(['angular_form','framedata'],function(){
           name:''
         };
 
-        $scope.evenformdata=frameData.evenform;
-        $scope.test={
-            title:""
-        }
+        $scope.event=frameData.evenform;
     }] ;
     return formcontroller;
 });
