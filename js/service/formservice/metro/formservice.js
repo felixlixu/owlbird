@@ -45,12 +45,12 @@ define(["app"],function(app){
                 var elem;
                 model=model+"."+key.name
                 if(key.require[0].minlength>0){
-                    elem="<p ng-show=\""+model+".$invalid&&"+model+".$error.minlength\" class=\"help-block\">Your input is too short,please input "+key.require[0].minlength+"characters at least.</p>"
+                    elem="<p ng-show=\""+model+".$invalid&&"+model+".$error.minlength\" class=\"help-block\">您输入的字太少啦！最少要输入 "+key.require[0].minlength+"个字。</p>"
                 }
                 ctrl.append(elem);
                 elem="";
                 if(key.require[0].maxlength>0){
-                    elem="<p ng-show=\""+model+".$invalid&&"+model+".$error.maxlength\" class=\"help-block\">Your input is too long,please input "+key.require[0].maxlength+"characters at more.</p>"
+                    elem="<p ng-show=\""+model+".$invalid&&"+model+".$error.maxlength\" class=\"help-block\">您输入的字太长啦！最多只能输入"+key.require[0].maxlength+"个字。</p>"
                 }
                 ctrl.append(elem);
                 elem="";
@@ -96,6 +96,18 @@ define(["app"],function(app){
                                 }else{
                                     contrl.$setValidity('regularpattern', false);
                                 }
+                            }
+                        }
+                        else if(length<=0){
+                            if(min>0){
+                                contrl.$setValidity('minlength', true);
+                            }
+                            if(max>0){
+                                contrl.$setValidity('maxlength', true);
+                            }
+                            if(regular!=null&&regular!=""&&regular!=undefined)
+                            {
+                                contrl.$setValidity('regularpattern', true);
                             }
                         }
                     });

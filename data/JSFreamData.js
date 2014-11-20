@@ -59,7 +59,7 @@ define([],function(){
             "control":"text",
             "require":[{
                 "patternNote":"状态只能输入数字.",
-                'regularpattern':"^\\d{n}$"
+                'regularpattern':"\d [0-9]"
             }]
         }],
         elecimgdata:[{

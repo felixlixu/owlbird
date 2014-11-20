@@ -5,7 +5,7 @@ require.config({
    paths:{
        // base js
        angular:"../lib/angular/1.2.7/angular",
-       angular_route:"../lib/angular/1.2.7/angular-route.min",
+       angular_route:"../lib/angular/1.2.7/angular-route",
        bootstrap:"../lib/bootstrap/3.3.0/bootstrap.min",
        jquery:'../lib/jquery/2.1.1/jquery-2.1.1.min',
 
@@ -51,6 +51,9 @@ require.config({
         },'zTree':{
             deps:['jquery'],
             exports:'zTree'
+        },'angular_route':{
+            deps:['angular'],
+            exports:'angular_route'
         }
     }
 });
@@ -58,8 +61,8 @@ require.config({
 define([
     'angular',
     'app',
-    'route',
     'bootstrap',
+    'route',
     'controllers/indexController',
     'controllers/elecbusiness',
     'config'
